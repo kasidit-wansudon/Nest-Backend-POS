@@ -9,8 +9,5 @@ export class OrderService extends BaseService<Order> {
   constructor(@InjectModel('order') private readonly orderModel: Model<Order>) {
     super(orderModel);
   }
-  async findAll() {
-    return await this.orderModel.find({}).sort({score: 'desc'}).exec();
-  }
 
 }
