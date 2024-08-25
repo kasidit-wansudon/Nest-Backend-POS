@@ -1,5 +1,5 @@
 import { Schema, Document } from 'mongoose';
-export interface Video extends Document {
+export interface items extends Document {
   description: string;
   amount: number;
   customer: string;
@@ -10,7 +10,7 @@ export interface Video extends Document {
 }
 
 
-export const VideoSchema = new Schema({
+export const ItemsSchema = new Schema({
   description: String,
   sources: [String],
   subtitle: String,

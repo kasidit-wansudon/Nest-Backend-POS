@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { AppService } from 'src/services/app.service';
+import { BaseService } from 'src/services/base.service';
 import { Order } from './order.schema';
 @Injectable()
-export class OrderService extends AppService<Order> {
+export class OrderService extends BaseService<Order> {
 
   constructor(@InjectModel('order') private readonly orderModel: Model<Order>) {
     super(orderModel);
@@ -21,10 +21,9 @@ export class OrderService extends AppService<Order> {
       { upsert: true },
     ).exec();
   }
-
-  async create(createOrderDto: any): Promise<any> {
-    const createdOrder = new this.orderModel(createOrderDto);
-    return await createdOrder.save();
+  
+  async create(createOrderDto: any): Promise<Order> {
+    return await super.create(createOrderDto);
   }
 
   async delete(id: string): Promise<any> {

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model, Document } from 'mongoose';
 
 @Injectable()
-export class AppService<T extends Document> {
+export class BaseService<T extends Document> {
   protected readonly model: Model<T>;
 
   constructor(model: Model<T>) {  // ต้องรับ model ในคอนสตรัคเตอร์
