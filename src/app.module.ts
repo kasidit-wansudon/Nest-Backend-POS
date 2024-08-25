@@ -7,7 +7,7 @@ import { RecipesModule } from './pages/recipes/recipes.module';
 export class AppController {
   @Get('/')
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World! V2';
   }
 }
 
