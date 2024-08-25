@@ -1,0 +1,8 @@
+{
+  "apps": [
+    {
+      "name": "backend-pos",
+      "script": "pnpm run start:prod"
+    }
+  ]
+}
