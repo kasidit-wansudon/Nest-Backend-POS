@@ -1,22 +1,12 @@
 import { Schema, Document } from 'mongoose';
-export interface items extends Document {
-  description: string;
-  amount: number;
-  customer: string;
-  status: string;
-  like: number;
-  view: number;
-  score: number;
+export interface Items extends Document {
+  name: string;
+  price: number;
+  recipe: Schema.Types.ObjectId; // เชื่อมโยงกับ Recipe
 }
 
-
-export const ItemsSchema = new Schema({
-  description: String,
-  sources: [String],
-  subtitle: String,
-  thumb: String,
-  title: String,
-  like: Number,
-  view: Number,
-  score: Number,
+export const ItemsSchema = new Schema<Items>({
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
+  recipe: { type: Schema.Types.ObjectId, ref: 'Recipe' }
 });

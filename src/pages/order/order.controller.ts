@@ -9,8 +9,4 @@ export class OrderController extends BaseController<OrderService, Order> {
     super(orderService);
   }
 
-  @Put('like/:id')
-  async updateLike(@Param('id') id: string) {
-    return await this.service.updateLike(id);
-  }
 }
