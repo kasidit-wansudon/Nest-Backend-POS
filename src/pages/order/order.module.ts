@@ -6,7 +6,7 @@ import { OrderController } from './order.controller';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'orderx', schema: OrderSchema }]), // กำหนดโมเดลและสคีมา
+    MongooseModule.forFeature([{ name: 'order', schema: OrderSchema }]), // กำหนดโมเดลและสคีมา
   ],
   providers: [OrderService],
   controllers: [OrderController], // รวม Controller

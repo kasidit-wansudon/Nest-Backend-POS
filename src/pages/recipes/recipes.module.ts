@@ -1,8 +1,8 @@
 import { Controller, Injectable, Module } from '@nestjs/common';
 import { InjectModel, MongooseModule } from '@nestjs/mongoose';
-import { BaseController } from 'src/controllers/app.controller';
+import { BaseController } from '../../controllers/app.controller';
 import { Schema, Document, Model } from 'mongoose';
-import { BaseService } from 'src/services/base.service';
+import { BaseService } from '../../services/base.service';
 
 export interface Recipes extends Document {
   title: string;

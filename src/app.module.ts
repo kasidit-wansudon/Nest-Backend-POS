@@ -1,8 +1,15 @@
-import { Module } from '@nestjs/common';
+import { Controller, Get, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ItemsModule } from './pages/items/items.module';
 import { OrderModule } from './pages/order/order.module';
 import { RecipesModule } from './pages/recipes/recipes.module';
+@Controller()
+export class AppController {
+  @Get('/')
+  getHello(): string {
+    return 'Hello World!';
+  }
+}
 
 @Module({
   imports: [
@@ -11,5 +18,6 @@ import { RecipesModule } from './pages/recipes/recipes.module';
     OrderModule,
     RecipesModule
   ],
+  controllers: [AppController], // fore test
 })
 export class AppModule {}

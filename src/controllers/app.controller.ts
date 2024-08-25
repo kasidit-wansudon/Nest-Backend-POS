@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Param, Body, Put, Delete } from '@nestjs/common';
-import { BaseControllerServiceModel } from 'src/models/base.controller.model';
+import { BaseControllerServiceModel } from '../models/base.controller.model';
 
 export class BaseController<TService extends BaseControllerServiceModel<TEntity>, TEntity> {
   protected readonly service: TService;
