@@ -13,6 +13,11 @@ export class BaseController<TService extends BaseControllerServiceModel<TEntity>
     return await this.service.findAll();
   }
 
+  @Get('/all')
+  async findAll2() {
+    return await this.service.findAll();
+  }
+
   @Get(':id')
   async findById(@Param('id') id: string) {
     return await this.service.findById(id);
