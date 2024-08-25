@@ -8,7 +8,7 @@ export class BaseController<TService extends BaseControllerServiceModel<TEntity>
     this.service = service;
   }
 
-  @Get()
+  @Get('/all')
   async findAll() {
     return await this.service.findAll();
   }
