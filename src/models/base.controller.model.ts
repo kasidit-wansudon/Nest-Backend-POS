@@ -1,4 +1,4 @@
-export interface BaseServiceModel<T> {
+export interface BaseControllerServiceModel<T> {
   findAll(): Promise<T[]>;
   findById(id: string): Promise<T>;
   create(createDto: any): Promise<T>;

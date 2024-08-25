@@ -6,7 +6,7 @@ import { ItemsController } from './items.controller';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Items', schema: ItemsSchema }]), // กำหนดโมเดลและสคีมา
+    MongooseModule.forFeature([{ name: 'items', schema: ItemsSchema }]), // กำหนดโมเดลและสคีมา
   ],
   providers: [ItemsService],
   controllers: [ItemsController], // รวม Controller
